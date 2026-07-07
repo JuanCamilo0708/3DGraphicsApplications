@@ -1,8 +1,10 @@
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdDrawPixel.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdDrawPixel.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetColor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetResolution.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetResolution.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdVarFloat.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdVarFloat.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CommandDictionary.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CommandDictionary.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Graphics.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Graphics.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\MathHelper.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\MathHelper.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\PixEditor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\PixEditor.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Rasterizer.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Rasterizer.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\ScriptParser.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\ScriptParser.obj
