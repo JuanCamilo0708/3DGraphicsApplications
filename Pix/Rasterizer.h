@@ -23,5 +23,5 @@ public:
 private:
 
 	X::Color mColor = X::Colors::White;
-	FillMode mFillMode = FillMode::Wireframe;
+	FillMode mFillMode = FillMode::Solid;
 };
