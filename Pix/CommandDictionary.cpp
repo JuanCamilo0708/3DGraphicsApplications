@@ -8,6 +8,7 @@
 #include "CmdEndDraw.h"
 #include "CmdVertex.h"
 #include "CmdSetFillMode.h"
+#include "CmdSetViewport.h"
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -23,15 +24,17 @@ CommandDictionary::CommandDictionary()
 
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
+	RegisterCommand<CmdSetViewport>();
 
 	// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();
 	RegisterCommand<CmdSetColor>();
+	RegisterCommand<CmdSetFillMode>();
+
 	// Primitives commands
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdVertex>();
-	RegisterCommand<CmdSetFillMode>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
