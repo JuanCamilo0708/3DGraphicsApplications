@@ -1,6 +1,5 @@
 #pragma once
 #include "Vertex.h"
-
 enum class Topology {
 	Point,
 	Line,

@@ -1,6 +1,8 @@
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Clipper.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Clipper.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdBeginDraw.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdBeginDraw.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdDrawPixel.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdEndDraw.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetClipping.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetColor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetFillMode.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetFillMode.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetResolution.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetResolution.obj
