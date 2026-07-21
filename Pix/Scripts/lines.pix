@@ -1,0 +1,15 @@
+SetResolution(30,30,20,true)
+
+BeginDraw(line)
+Vertex(5,2,1,1,0)
+Vertex(15,15,1,1,1)
+Vertex(2,21,0,1,0)
+Vertex(15,15,1,1,1)
+Vertex(25,27,0,0,1)
+Vertex(15,15,1,1,1)
+Vertex(25,8,1,0,0)
+
+Vertex(15,15,1,1,1)
+
+
+EndDraw()
