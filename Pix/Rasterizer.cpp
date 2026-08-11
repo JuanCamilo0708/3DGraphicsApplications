@@ -1,5 +1,5 @@
 #include "Rasterizer.h"
-
+#include "DepthBuffer.h"
 Rasterizer* Rasterizer::Get()
 {
 	static Rasterizer sInstance;
@@ -42,7 +42,10 @@ void Rasterizer::DrawPoint(int x, int y)
 
 void Rasterizer::DrawPoint(const Vertex& v)
 {
-	X::DrawPixel(v.position.x, v.position.y, v.color);
+	if (DepthBuffer::Get()->CheckDepthBuffer(v.position.x, v.position.y, v.position.z)) {
+
+		X::DrawPixel(v.position.x, v.position.y, v.color);
+	}
 }
 
 void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
@@ -62,7 +65,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	else {
 		if (a.position.x < b.position.x) {
 			DrawLineHorizontal(a, b);
-			
+
 		}
 		else
 		{
@@ -74,7 +77,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 {
 	switch (mFillMode)
-	{	
+	{
 	case FillMode::Wireframe:
 		DrawLine(a, b);
 		DrawLine(b, c);
@@ -88,8 +91,8 @@ void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 			});
 		DrawFilledTriangle(sortedVertices[0], sortedVertices[1], sortedVertices[2]);
 	}
-		
-		break;
+
+						break;
 	default:
 		break;
 	}
@@ -121,10 +124,10 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 		}
 	}
 	else {
-		float t = (b.position.y - a.position.y)/dy;
+		float t = (b.position.y - a.position.y) / dy;
 		Vertex splitVertex = LerpVertex(a, c, t);
 		DrawFilledTriangle(a, b, splitVertex);
-		DrawFilledTriangle(b,splitVertex,c);
+		DrawFilledTriangle(b, splitVertex, c);
 
 	}
 }

@@ -14,6 +14,4 @@ public:
 			"- enables/disables clipping outside of viewport";
 	}
 	bool Execute(const std::vector<std::string>& params) override;
-private:
-
 };

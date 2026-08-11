@@ -7,6 +7,7 @@ namespace MathHelper {
 	constexpr float DegToRad = 3.1415926f / 180.0f;
 	
 	bool CheckEqual(float a, float b);
+	void FlattenVectorScreenCordinate(Vector3& v);
 
 	float MagnitudeSquared(const Vector2& v);
 	float MagnitudeSquared(const Vector3& v);
