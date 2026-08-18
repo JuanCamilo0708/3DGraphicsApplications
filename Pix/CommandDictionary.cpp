@@ -16,6 +16,8 @@
 #include "CmdCamera.h"
 #include "CmdSetCullMode.h"
 #include "CmdEnableDepth.h"
+#include "CmdMaterial.h"
+#include "CmdLights.h"
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -63,6 +65,22 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraNear>();
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFOV>();
+
+	//Material Commands
+
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialShininess>();
+
+	//Light Commands
+	RegisterCommand<CmdSetLightAmbient>();
+	RegisterCommand<CmdSetLightDiffuse>();
+	RegisterCommand<CmdSetLightSpecular>();
+	RegisterCommand<CmdAddDirectionalLight>();
+	RegisterCommand<CmdAddPointLight>();
+
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
