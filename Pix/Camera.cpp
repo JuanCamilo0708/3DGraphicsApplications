@@ -21,7 +21,6 @@ void Camera::SetPosition(const Vector3& pos) {
 void Camera::SetDirection(const Vector3& dir) {
 	mDirection = dir;
 }
-
 //Internal info
 void Camera::SetNearPlane(float nearPlane) {
 	mNearPlane = nearPlane;
