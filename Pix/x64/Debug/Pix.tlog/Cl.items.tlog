@@ -9,6 +9,7 @@ C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdLights.cpp;C:\User
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdMaterial.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdMaterial.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdMatrixStack.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdMatrixStack.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdModel.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdModel.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdPostProcessing.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdPostProcessing.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetAddressMode.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetAddressMode.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetClipping.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\CmdSetColor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\CmdSetColor.obj
@@ -35,8 +36,10 @@ C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\MatrixStack.cpp;C:\Us
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Model.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Model.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\ModelManager.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\ModelManager.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\PixEditor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\PixEditor.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\PostProcessing.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\PostProcessing.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\PrimitivesManager.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\PrimitivesManager.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Rasterizer.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Rasterizer.obj
+C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\RenderTarget.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\RenderTarget.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\ScriptParser.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\ScriptParser.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\TextEditor.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\TextEditor.obj
 C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\Texture.cpp;C:\Users\juanc\Documents\GitHub\3DGraphicsApplications\Pix\x64\Debug\Texture.obj

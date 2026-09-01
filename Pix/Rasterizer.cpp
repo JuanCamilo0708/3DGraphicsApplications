@@ -2,6 +2,7 @@
 #include "DepthBuffer.h"
 #include "LightManager.h"
 #include "TextureManager.h"
+#include "PostProcessing.h"
 Rasterizer* Rasterizer::Get()
 {
 	static Rasterizer sInstance;
@@ -59,7 +60,11 @@ void Rasterizer::DrawPoint(const Vertex& v)
 		if (mShadeMode == ShadeMode::Phong) {
 			pixelColor *= LightManager::Get()->ComputeLightColor(v.worldPos, v.norm);
 		}
-		X::DrawPixel(v.position.x, v.position.y,pixelColor);
+		if (!PostProcessing::Get()->Draw(v.position.x, v.position.y, pixelColor))
+		{
+			X::DrawPixel(v.position.x, v.position.y, pixelColor);
+
+		}
 	}
 }
 

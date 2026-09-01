@@ -1,6 +1,6 @@
 SetResolution(500, 500, 1)
 
-SetViewport(50, 50, 400, 400, true)
+SetViewport(50, 50, 400, 400)
 SetClipping(true)
 SetCullMode(back)
 EnableDepth(true)
@@ -32,9 +32,12 @@ PushRotationX($rotX)
 PushScaling(1, 1, 1)
 
 //SetTexture(../Images/checker.bmp)
-//SetTexture(../Images/sponge_bob.bmp)
-SetTexture(../Images/crate.bmp)
+SetTexture(../Images/sponge_bob.bmp)
+//SetTexture(../Images/crate.bmp)
 
+PostProcessingSetEffectType(chromaticAberration)
+
+PostProcessingBeginDraw()
 BeginDraw(triangle, true)
 
 // Front
@@ -86,4 +89,12 @@ Vertex(1, -1, -1, 1, 0, -1)
 Vertex(1, -1, 1, 1, 1, -1)
 
 EndDraw()
+PostProcessingEndDraw()
+
+
+
+
+
+
+
 
