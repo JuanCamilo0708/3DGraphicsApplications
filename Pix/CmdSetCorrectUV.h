@@ -1,17 +1,18 @@
 #pragma once
+
 #include "Command.h"
 
-class CmdSetFillMode: public Command
-{
+class CmdSetCorrectUV : public Command {
 public:
 	const char* GetName() override {
-		return "SetFillMode";
+		return "SetCorrectUV";
 	}
 	const char* GetDescription() override {
 		return
-			"SetFillMode(fillMode)\n"
+			"SetCorrectUV(enable)\n"
 			"\n"
-			"- sets triangle fill mode (wireframe, solid)";
+			"- enables/disables uv correction when using textures";
+
 	}
 	bool Execute(const std::vector<std::string>& params) override;
 };

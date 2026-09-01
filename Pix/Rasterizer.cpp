@@ -1,5 +1,7 @@
 #include "Rasterizer.h"
 #include "DepthBuffer.h"
+#include "LightManager.h"
+#include "TextureManager.h"
 Rasterizer* Rasterizer::Get()
 {
 	static Rasterizer sInstance;
@@ -35,6 +37,16 @@ void Rasterizer::SetFillMode(FillMode fillMode)
 	mFillMode = fillMode;
 }
 
+void Rasterizer::SetShadeMode(ShadeMode shadeMode)
+{
+	mShadeMode = shadeMode;
+}
+
+ShadeMode Rasterizer::GetShadeMode()
+{
+	return mShadeMode;
+}
+
 void Rasterizer::DrawPoint(int x, int y)
 {
 	X::DrawPixel(x, y, mColor);
@@ -43,8 +55,11 @@ void Rasterizer::DrawPoint(int x, int y)
 void Rasterizer::DrawPoint(const Vertex& v)
 {
 	if (DepthBuffer::Get()->CheckDepthBuffer(v.position.x, v.position.y, v.position.z)) {
-
-		X::DrawPixel(v.position.x, v.position.y, v.color);
+		X::Color pixelColor = TextureManager::Get()->SampleColor(v.color);
+		if (mShadeMode == ShadeMode::Phong) {
+			pixelColor *= LightManager::Get()->ComputeLightColor(v.worldPos, v.norm);
+		}
+		X::DrawPixel(v.position.x, v.position.y,pixelColor);
 	}
 }
 

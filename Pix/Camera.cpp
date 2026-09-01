@@ -19,7 +19,7 @@ void Camera::SetPosition(const Vector3& pos) {
 	mPosition = pos;
 }
 void Camera::SetDirection(const Vector3& dir) {
-	mDirection = dir;
+	mDirection = MathHelper::Normalize(dir);
 }
 //Internal info
 void Camera::SetNearPlane(float nearPlane) {

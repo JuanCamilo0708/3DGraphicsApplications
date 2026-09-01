@@ -1,17 +1,18 @@
 #pragma once
+
 #include "Command.h"
 
-class CmdSetFillMode: public Command
-{
+class CmdSetUseFilter : public Command {
 public:
 	const char* GetName() override {
-		return "SetFillMode";
+		return "SetUseFilter";
 	}
 	const char* GetDescription() override {
 		return
-			"SetFillMode(fillMode)\n"
+			"SetUseFilter(enable)\n"
 			"\n"
-			"- sets triangle fill mode (wireframe, solid)";
+			"-enable/disables using bilinear filter on textures";
+
 	}
 	bool Execute(const std::vector<std::string>& params) override;
 };

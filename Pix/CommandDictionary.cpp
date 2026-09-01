@@ -18,6 +18,12 @@
 #include "CmdEnableDepth.h"
 #include "CmdMaterial.h"
 #include "CmdLights.h"
+#include "CmdSetShadeMode.h"
+#include "CmdModel.h"
+#include "CmdSetTexture.h"
+#include "CmdSetCorrectUV.h"
+#include "CmdSetUseFilter.h"
+#include "CmdSetAddressMode.h"
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -42,6 +48,12 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdSetClipping>();
+	RegisterCommand<CmdSetShadeMode>();
+	RegisterCommand<CmdSetTexture>();
+	RegisterCommand<CmdSetUseFilter>();
+	RegisterCommand<CmdSetAddressMode>();
+
+
 
 
 	// Primitives commands
@@ -50,6 +62,8 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdVertex>();
 	RegisterCommand<CmdSetCullMode>();
 	RegisterCommand<CmdEnableDepth>();
+	RegisterCommand<CmdSetCorrectUV>();
+	RegisterCommand<CmdModel>();
 
 	//Matrix Stack Commands
 	RegisterCommand<CmdPushTranslation>();
@@ -80,6 +94,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetLightSpecular>();
 	RegisterCommand<CmdAddDirectionalLight>();
 	RegisterCommand<CmdAddPointLight>();
+	RegisterCommand<CmdAddSpotLight>();
 
 }
 

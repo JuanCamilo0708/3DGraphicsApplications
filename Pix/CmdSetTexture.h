@@ -1,17 +1,18 @@
 #pragma once
+
 #include "Command.h"
 
-class CmdSetFillMode: public Command
-{
+class CmdSetTexture : public Command{
 public:
 	const char* GetName() override {
-		return "SetFillMode";
+		return "SetTexture";
 	}
 	const char* GetDescription() override {
 		return
-			"SetFillMode(fillMode)\n"
+			"SetTexture(fileName)\n"
 			"\n"
-			"- sets triangle fill mode (wireframe, solid)";
+			"- sets texture to use when using uv";
+
 	}
 	bool Execute(const std::vector<std::string>& params) override;
 };

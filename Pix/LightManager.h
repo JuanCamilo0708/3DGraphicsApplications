@@ -17,6 +17,8 @@ public:
 	//point light
 	void AddPointLight(const Vector3& position, float kConstant, float kLinear, float kQuadratic);
 	X::Color ComputeLightColor(const Vector3& position, const Vector3& normal);
+	//spotLight
+	void AddSpotLight(const Vector3& position, const Vector3& direction, float kConstant, float kLinear, float kQuadratic, float angle, float decay);
 
 private:
 	std::vector<std::unique_ptr<Light>> mLights;

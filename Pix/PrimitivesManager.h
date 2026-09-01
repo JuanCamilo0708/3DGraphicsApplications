@@ -18,6 +18,8 @@ public:
 	static PrimitivesManager* Get();
 	void OnNewFrame();
 	void SetCullMode(CullMode mode);
+	void SetCorrectUV(bool correctUV);
+
 	bool BeginDraw(Topology topology, bool applyTransform);
 	void AddVertex(const Vertex& v);
 	void EndDraw();
@@ -29,5 +31,6 @@ private:
 	CullMode mCullMode = CullMode::None; 
 	bool mDrawBegin = false;
 	bool mApplyTransform = false;
+	bool mCorrectUV = false;
 };
 

@@ -1,17 +1,19 @@
 #pragma once
 #include "Command.h"
 
-class CmdSetFillMode: public Command
+class CmdSetShadeMode : public Command
 {
 public:
 	const char* GetName() override {
-		return "SetFillMode";
+		return "SetShadeMode";
 	}
 	const char* GetDescription() override {
 		return
-			"SetFillMode(fillMode)\n"
+			"SetShadeMode(shadeMode)\n"
 			"\n"
-			"- sets triangle fill mode (wireframe, solid)";
+			"- sets triangle shade mode (flat,gouraud,phong)";
 	}
 	bool Execute(const std::vector<std::string>& params) override;
+private:
+
 };

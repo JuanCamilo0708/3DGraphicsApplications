@@ -44,7 +44,6 @@ namespace {
 }
 
 PrimitivesManager::PrimitivesManager() {
-
 }
 
 PrimitivesManager* PrimitivesManager::Get() {
@@ -53,11 +52,16 @@ PrimitivesManager* PrimitivesManager::Get() {
 }
 void PrimitivesManager::OnNewFrame() {
 	mCullMode = CullMode::None;
+	mCorrectUV = false;
 
 }
 void PrimitivesManager::SetCullMode(CullMode mode)
 {
 	mCullMode = mode;
+}
+void PrimitivesManager::SetCorrectUV(bool correctUV)
+{
+	mCorrectUV = correctUV;
 }
 bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
@@ -91,6 +95,8 @@ void PrimitivesManager::EndDraw()
 	// full transformation pipeline
 	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
 	Matrix4 matNDCSpace = matView * matProj;
+
+	ShadeMode shadeMode = Rasterizer::Get()->GetShadeMode();
 	switch (mTopology)
 	{
 	case Topology::Point:
@@ -119,18 +125,51 @@ void PrimitivesManager::EndDraw()
 				mVertexBuffer[i]
 			};
 			if (mApplyTransform) {
+				//Local
+				if (MathHelper::CheckEqual(MathHelper::MagnitudeSquared(triangle[0].norm), 0.0f)) {
+					Vector3 faceNorm = CreateFaceNormal(triangle);
+					for (size_t t = 0; t < triangle.size(); t++)
+					{
+						triangle[t].norm = faceNorm;
 
+					}
+				}
+
+				//World
 				for (size_t t = 0; t < triangle.size(); t++)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matWorld);
+					triangle[t].worldPos = triangle[t].position;
+					triangle[t].norm = MathHelper::TransformNormal(triangle[t].norm, matWorld);
 
 				}
-				Vector3 faceNorm = CreateFaceNormal(triangle);
-				for (size_t t = 0; t < triangle.size(); t++)
-				{
-					triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].position,faceNorm);
+				if (triangle[0].color.z >= 0.0f) {
 
+
+					if (shadeMode == ShadeMode::Flat) {
+						X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].position, triangle[0].norm);
+						triangle[0].color *= lightColor;
+						triangle[1].color *= lightColor;
+						triangle[2].color *= lightColor;
+					}
+					else if (shadeMode == ShadeMode::Gouraud) {
+						for (size_t t = 0; t < triangle.size(); t++)
+						{
+							triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].position, triangle[t].norm);
+
+						}
+					}
 				}
+				else if (mCorrectUV) {
+					for (uint32_t t = 0; t < triangle.size(); ++t) {
+						Vector3 viewSpace = MathHelper::TransformCoord(triangle[t].worldPos, matView);
+						triangle[t].color.x /= viewSpace.z;
+						triangle[t].color.y /= viewSpace.z;
+						triangle[t].color.w = 1.0f / viewSpace.z;
+					}
+				}
+
+				//NDC
 				for (size_t t = 0; t < triangle.size(); t++)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matNDCSpace);
@@ -139,6 +178,8 @@ void PrimitivesManager::EndDraw()
 				if (CullTrianlge(mCullMode, triangle)) {
 					continue;
 				}
+
+				//Screen
 				for (size_t t = 0; t < triangle.size(); t++)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matScreen);

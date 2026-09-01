@@ -4,7 +4,7 @@ SetViewport(50, 50, 400, 400, true)
 SetClipping(true)
 SetCullMode(back)
 EnableDepth(true)
-
+SetShadeMode(flat)
 float $camX = 0, 0.01
 float $camY = 0, 0.01
 float $camZ = -5, 0.01
@@ -144,5 +144,10 @@ Vertex(1, -1, -1, 0.0, 0.5, 0.5)
 Vertex(1, -1, 1, 0.0, 0.5, 0.5)
 
 EndDraw()
+
+
+
+
+
 
 

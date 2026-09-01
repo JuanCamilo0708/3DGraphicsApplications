@@ -1,17 +1,15 @@
 #pragma once
 #include "Command.h"
-
-class CmdSetFillMode: public Command
+class CmdModel :public Command
 {
 public:
 	const char* GetName() override {
-		return "SetFillMode";
+		return "Model";
 	}
 	const char* GetDescription() override {
 		return
-			"SetFillMode(fillMode)\n"
-			"\n"
-			"- sets triangle fill mode (wireframe, solid)";
+			"Model(fileName)\n"
+			"- loads a file to render, adds vertices to primative manager";
 	}
 	bool Execute(const std::vector<std::string>& params) override;
 };
