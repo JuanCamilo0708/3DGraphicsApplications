@@ -39,11 +39,11 @@ class CmdRTSphere: public Command
 
 public:
 	const char* GetName() override {
-		return "RTSphere:";
+		return "RTSphere";
 	}
 	const char* GetDescription() override {
 		return
-			"RTSphere:(x, y, z, radius, r, g, b, <ri>)\n"
+			"RTSphere(x, y, z, radius, r, g, b, <ri>)\n"
 			"\n"
 			"- adds a sphere to the ray tracing scene\n";
 			"- optional ri(refraction index)\n";
@@ -56,11 +56,11 @@ class CmdRTLight : public Command
 
 public:
 	const char* GetName() override {
-		return "RTLight:";
+		return "RTLight";
 	}
 	const char* GetDescription() override {
 		return
-			"RTLight:(x, y, z, r, g, b)\n"
+			"RTLight(x, y, z, r, g, b)\n"
 			"\n"
 			"- adds a light to the ray tracing scene\n";
 	}

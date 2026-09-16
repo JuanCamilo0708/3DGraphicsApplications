@@ -25,6 +25,7 @@
 #include "CmdSetUseFilter.h"
 #include "CmdSetAddressMode.h"
 #include "CmdPostProcessing.h"
+#include "CMDRayTracer.h"
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -101,6 +102,12 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdPostProcessingBeginDraw>();
 	RegisterCommand<CmdPostProcessingEndDraw>();
 	RegisterCommand<CmdPostProcessingSetEffectType>();
+
+	//RayTracer Commands
+	RegisterCommand<CmdBeginRayTracing>();
+	RegisterCommand<CmdEndRayTracing>();
+	RegisterCommand<CmdRTLight>();
+	RegisterCommand<CmdRTSphere>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

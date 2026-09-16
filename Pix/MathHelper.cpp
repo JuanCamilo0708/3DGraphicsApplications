@@ -112,7 +112,7 @@ float MathHelper::Determinant(const Matrix4& m) {
 
 bool MathHelper::Intersect(const Ray& ray, const Sphere& sphere, float& distance)
 {
-	Vector3 v = ray.origin - sphere.origin;
+	Vector3 v = sphere.origin - ray.origin;
 	float t = Dot(v, ray.direction);
 
 	Vector3 closestPoint = ray.origin + (ray.direction * t);
@@ -123,7 +123,7 @@ bool MathHelper::Intersect(const Ray& ray, const Sphere& sphere, float& distance
 		return false;
 	}
 	float oppositeSide = sqrt(radiusSqr - closestPointToCenterSqr);
-	if (MagnitudeSquared(v) < radiusSqr) 
+	if (MagnitudeSquared(v) < radiusSqr)
 	{
 		distance = t + oppositeSide;
 	}
